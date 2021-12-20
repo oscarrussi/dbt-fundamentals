@@ -6,6 +6,19 @@ sources:
     schema: stitchpokeapiintegration
     tables:
       - name: payments
+        columns:
+          - name: __sdc_primary_key
+            tests:
+              - unique
+              - not_null
+          - name: paymentmethod
+            tests:
+              - accepted_values:
+                  values:
+                      - credit_card
+                      - coupon
+                      - bank_transfer
+                      - gift_card
         loaded_at_field: _sdc_batched_at
         freshness:
           warn_after: {count: 12, period: hour}
