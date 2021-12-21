@@ -4,15 +4,22 @@ models:
   - name: stg_payments
     columns:
       - name: order_id
+        description: id of the order associated with this payment
         tests:
           - relationships:
               to: ref('stg_orders')
               field: order_id
       - name: payment_id
+        description: unique identifier of the payment
         tests:
           - unique
           - not_null
+      - name: amount
+        description: total amount paid in dollars
+      - name: paymentmethod
+        description: "{{ doc('payment_paymentmethod') }}"
       - name: status
+        description: "{{ doc('payment_status') }}"
         tests:
            - accepted_values:
               values:
