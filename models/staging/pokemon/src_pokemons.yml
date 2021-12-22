@@ -1,0 +1,65 @@
+version: 2
+
+sources:
+  - name: pokemons
+    description: Database with pokemon details, types and abilities
+    database: stitch-poke-api-oscar-russi
+    schema: stitchpokeapiintegration
+    tables:
+      - name: pokemon_details
+        description: Basic details about the first 150 pokemons.
+        columns:
+          - name: index
+            description: Primary key for pokemons.
+            tests:
+              - unique
+              - not_null
+          - name: url
+            description: url that contains more details about the pokemon.
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: pokemon name.
+            tests:
+              - unique
+              - not_null
+          - name: height
+            description: pokemon height.
+            tests:
+              - not_null
+          - name: weight
+            description: pokemon weight.
+            tests:
+              - not_null
+      - name: pokemon_types
+        description: contains the types of the pokemons.
+        columns:
+          - name: index
+            description: Primary key for pokemons.
+            tests:
+              - not_null
+              - relationships:
+                  to: source('pokemons', 'pokemon_details')
+                  field: index
+          - name: type
+            description: pokemon type.
+            tests:
+              - not_null
+          - name: name
+      - name: pokemon_abilities
+        description: contains the abilities of the pokemons.
+        columns:
+          - name: index
+            description: Primary key for pokemons.
+            tests:
+              - not_null
+              - relationships:
+                  to: source('pokemons', 'pokemon_details')
+                  field: index
+          - name: ability
+            description: pokemon ability.
+            tests:
+              - not_null
+              
+           

@@ -38,3 +38,8 @@ models:
         +materialized: table
     staging:
       +materialized: view
+  pokemons:
+    marts:
+      +materialized: table
+    staging:
+      +materialized: view
