@@ -27,19 +27,19 @@ models:
         tests:
           - not_null
       - name: range_height
-        description: range for pokemon height.
+        description: "{{ doc('range_height_description') }}"
         tests:
           - not_null
           - accepted_values: 
               values: ['tall', 'medium', 'short']
       - name: range_weight
-        description: range for pokemon weight.
+        description: "{{ doc('range_weight_description') }}"
         tests:
           - not_null
           - accepted_values: 
               values: ['heavy', 'lightweight', 'medium']
       - name: range_bmi
-        description: range for pokemon BMI.
+        description: "{{ doc('range_bmi_description') }}"
         tests:
           - not_null
           - accepted_values: 

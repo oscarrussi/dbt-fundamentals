@@ -13,4 +13,4 @@ FROM details as d
 inner join abilities as a 
 on d.index=a.index
 inner join types as t
-on d.index=t.index;
+on d.index=t.index
