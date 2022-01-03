@@ -1,0 +1,10 @@
+version: 2
+
+seeds:
+  - name: employees
+    description: employees table generated from a csv file
+    columns:
+      - name: employee_id
+        tests:
+          - unique
+          - not_null
