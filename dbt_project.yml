@@ -38,9 +38,13 @@ models:
         +materialized: table
     staging:
       +materialized: view
-  pokemons:
-    marts:
-      core:
-        +materialized: table
-    staging:
-      +materialized: view
+    audit:
+      +materialized: ephemeral
+    legacy:
+      +materialized: ephemeral
+    pokemons:
+      marts:
+        core:
+          +materialized: table
+      staging:
+        +materialized: view

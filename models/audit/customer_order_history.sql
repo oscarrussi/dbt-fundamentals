@@ -1,9 +1,3 @@
-{{
-  config(
-    materialized = "ephemeral"
-  )
-}}
-
 with orders as (
    select 
         row_number() over (partition by user_id order by order_date, id) as user_order_seq,
