@@ -1,9 +1,9 @@
 select
-    id,
+    id as job_id,
     title,
     description,
     country_id,
-    status
+    status,
     original_open_date,
     type
 from {{ source('jazzhr', 'jazzhr_jobs') }}
