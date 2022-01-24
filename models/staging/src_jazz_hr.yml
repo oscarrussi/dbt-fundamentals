@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: jazzhr
+    description: A clone of a Postgres application database.
+    database: jazzhr
+    schema: jazzhrintegration
+    tables:
+      - name: jazzhr_jobs
+        description: jobs data
+      - name: jazzhr_applicants
+        description: applicants data
+      - name: jazzhr_applicants2jobs
+        description: applicants2jobs data
+      - name: jazzhr_applicants_details
+        description: applicants data with additional details
